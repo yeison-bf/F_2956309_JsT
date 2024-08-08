@@ -78,3 +78,9 @@ do {
       break;
   }
 } while (opcion != 4);
+
+
+
+
+// Prueba de carga
+console.log("Hola")
