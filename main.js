@@ -21,12 +21,14 @@
 // alert(nombre+"\n"+nombre2)
 let opcion = 0;
 let opcionCase1 = 0
+
+let listadoAprendices = [];
 do {
   opcion = parseInt(
     prompt(`MENU
       -------------------
-          1. Ciudades
-          2. Aprendices
+          1. Aprendices
+          2. Ciudades
           3. Instructores
           4. Salir
           
@@ -35,37 +37,43 @@ do {
 
   switch (opcion) {
     case 1:
-      alert("Opión 1");
       do {
         opcionCase1 = parseInt(
           prompt(`Ingrese su nombre
-                1. Opción 1
-                2. Opción 2
-                3. Opción 3
-                4. Salir`)
+                1. Registro
+                2. Listado
+                3. Salir`)
         );
 
-        switch (opcion) {
+        switch (opcionCase1) {
           case 1:
-            alert("Estoy en la Opción 1");
+            alert("Listado de aprendices");
+              let cantidad = parseInt(prompt("¿Cuantos aprendices desea registrar?"))
+              
+              // Llenado dinamico
+              for (let i = 0; i < cantidad; i++) {
+                let nombre = prompt(`Nombre del aprendiz ${(i+1)}`)
+                listadoAprendices[i] = nombre
+              }
+
+              alert("Registro exitoso de los aprendices");
             break;
           case 2:
-            alert("Estoy en la Opción 1");
+            alert("Listado de aprendicez");
+              // for (let i = 0; i < listadoAprendices.length; i++) {
+                alert(listadoAprendices);
+              // }
             break;
           case 3:
             alert("Estoy en la Opción 1");
-            break;
-          case 4:
-            alert("Adios de la opción 1");
             break;
           default:
             alert("Error de opción");
             break;
         }
-      } while (opcionCase1 != 4);
+      } while (opcionCase1 != 3);
       break;
     case 2:
-      alert("Opción 2");
       break;
     case 3:
       alert("Opción 3");
