@@ -59,10 +59,12 @@ do {
               alert("Registro exitoso de los aprendices");
             break;
           case 2:
+            let mensaje = "";
             alert("Listado de aprendicez");
-              // for (let i = 0; i < listadoAprendices.length; i++) {
-                alert(listadoAprendices);
-              // }
+              for (let i = 0; i < listadoAprendices.length; i++) {
+                mensaje += `${i+1}: ${listadoAprendices[i]}\n`;
+              }
+              alert(mensaje);
             break;
           case 3:
             alert("Estoy en la Opción 1");
