@@ -1,5 +1,5 @@
 // Colección de empleados
-let employess = [];
+let employees = [];
 // Colección de empresas
 let companies = [
   {
@@ -32,17 +32,18 @@ function start() {
                 document:prompt(`Documento del empleado`),
                 name:prompt(`Nombre del empleado`),
                 lastname: prompt(`Apellidos del empleado`),
-                complanyId :prompt(`${listCompany()} Empresa`),
+                complanyId : parseInt(prompt(`Listado de empresas:
+                  
+                  ${listCompany()}
+
+                  Digite el código del programa `)),
             }
-            listCompany()
-
-            
-
-            
+            employees.push(employee)
+            alert("Registro exitoso...")
         }
         break;
       case 2:
-        alert("case 2");
+        alert(listEmployees())
         break;
       case 3:
         alert("Adios...");
@@ -59,10 +60,30 @@ function start() {
 function listCompany(){
     let list="";
     for (let i = 0; i < companies.length; i++) {
-        list+=`${(i+1)} : ${companies[i].name}`
+        list+=`Codigo: ${(i)} | Nombre ${companies[i].name}\n`
     }
+    return list;
 }
 
+
+
+// Imprimir listado de aprendice
+function listEmployees(){
+  let list="";
+  for (const element of employees) {
+    list+=`
+    Documento: ${element.document}
+    Nombre: ${element.name}
+    Apellidos: ${element.lastname}
+    Empresa ${obtenerNombreEmpresa(element.complanyId)}\n`
+  }
+  return list;
+}
+
+
+function obtenerNombreEmpresa(id){
+  return companies[id].name
+}
 
 
 start();
